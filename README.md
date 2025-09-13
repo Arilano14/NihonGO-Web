@@ -1,36 +1,90 @@
-A modern HTML project utilizing Tailwind CSS for building responsive web applications with minimal setup.
+Siap 👍 aku bikinkan isi `README.md` sederhana untuk repo **NihonGO-Web**. Isinya berupa langkah-langkah clone repo dan instalasi **Tailwind CSS**.
 
-## 🚀 Features
+Berikut contoh file lengkap:
 
-- **HTML5** - Modern HTML structure with best practices
-- **Tailwind CSS** - Utility-first CSS framework for rapid UI development
-- **NPM Scripts** - Easy-to-use commands for development and building
-- **Responsive Design** - Mobile-first approach for all screen sizes
+````markdown
+# NihonGO-Web
 
-## 📋 Prerequisites
+Proyek ini menggunakan **Tailwind CSS** untuk styling.  
+Ikuti langkah-langkah berikut untuk menjalankan project secara lokal.
 
-- Node.js (v12.x or higher)
-- npm or yarn
+---
 
-## 🛠️ Installation
+## 🚀 Clone Repository
+```bash
+git clone https://github.com/Arilano14/NihonGO-Web.git
+cd NihonGO-Web
+````
 
-1. Install dependencies:
+## 📦 Instalasi Dependensi
+
+Pastikan sudah menginstal **Node.js** & **npm**.
+Lalu jalankan:
+
 ```bash
 npm install
-# or
-yarn install
 ```
 
-## 📁 Project Structure
+## 🎨 Instalasi Tailwind CSS
+
+Jalankan perintah berikut:
+
+```bash
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+
+## ⚙️ Konfigurasi Tailwind
+
+Edit file **`tailwind.config.js`** agar sesuai dengan struktur project:
+
+```js
+module.exports = {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+## 🖌️ Tambahkan Tailwind ke CSS
+
+Buat/ubah file `src/input.css` dengan isi:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+Lalu update `package.json` bagian **scripts** untuk menjalankan Tailwind:
+
+```json
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview"
+}
+```
+
+## ▶️ Menjalankan Project
+
+Untuk menjalankan project di mode development:
+
+```bash
+npm run dev
+```
+
+Project akan berjalan di [http://localhost:5173](http://localhost:5173) (default Vite).
+
+---
+
+## 📚 Dokumentasi Tailwind
+
+* [Tailwind CSS Docs](https://tailwindcss.com/docs)
 
 ```
-html_app/
-├── css/
-│   ├── tailwind.css   # Tailwind source file with custom utilities
-│   └── main.css       # Compiled CSS (generated)
-├── assets/            # Images, fonts, and other static assets
-├── pages/             # HTML pages
-├── index.html         # Main entry point
-├── package.json       # Project dependencies and scripts
-└── tailwind.config.js # Tailwind CSS configuration
+
+Mau saya buatkan juga versi **README singkat** (hanya clone + install Tailwind tanpa detail config), atau sekalian yang **lengkap dengan Vite setup** kayak di atas?
 ```
